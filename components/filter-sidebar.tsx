@@ -186,5 +186,31 @@ export default function FilterSidebar() {
             <AccordionTrigger className="py-2">
               <div className="flex items-center gap-2">
                 <svg className="h-5 w-5 text-blue-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 16.5C9.93 16.5 8.25 14.82 8.25 12.75V11.25C8.25 9.18 9.93 7.5 12 7.5C14.07 7.5 15.75 9.18 15.75 11.25V12.75C15.75 14.82 14.07 16.5 12 16.5ZM12 9C10.76 9 9.75 10.01 9.75 11.25V12.75C9.75 13.99 10.76 15 12 15C13.24 15 14.25 13.99 14.25 12.75V11.25C14.25 10.01 13.24 9 12 9Z" fill="currentColor"/>
-                  <path d="M15.21 21.75C14.97 21.75 14.72 21.68 14.51 21.54L12.01 19.91L9.51 21.54C9.11 21.8 8.61 21.83 8.17 21.6C7.74 21.38 7.46 20.95 7.46 20.46V16.45C7.14 16.26 6.84 16.04 6.56 15.78C5.47 14.76 4.85 13.38 4.85 11.91V11.25C4.85 10.84 5.19 10.5 5.6 10.5C6.01 10.5 6.35 10.84 6.35 11.25V11.91C6.35 12.96 6.79 13.93 7.59 14.68C7.85 14.92 8.14 15.11 8.45 15.25C8.82 15.42 9.05 15.79 9.05 16.2V19.59L10.99 18.33C11.29 18.14 11.66 18.14 11.96 18.33L13.9 19.59V16.2C13.9 15.79 14.13 15.42 14.5 15.25C14.81 15.11 15.1 14.92 15.36 14.68C16.16 13.93 16.6 12.96 16.6 11.91V11.25C16.6 10.84 16.94 10.5 17.35 10.5C17.76 10.5 18.1 10.84 18.1 11.25V11.91C18.1 13.38 17.48 14.76 16.39 15.78C16.11 16.04 15.81 16.26 15.49 16.\
+                  <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"/>
+                  <path d="M2 17L12 22L22 17" fill="currentColor" fillOpacity="0.4"/>
+                  <path d="M2 12L12 17L22 12" fill="currentColor" fillOpacity="0.4"/>
+                </svg>
+                <span className="font-medium">Technology</span>
+              </div>
+            </AccordionTrigger>
+            <AccordionContent>
+              <div className="py-2 space-y-2">
+                <div className="flex items-center">
+                  <Input placeholder="Search technologies" className="text-sm" />
+                </div>
+                <div className="space-y-1">
+                  {['Salesforce', 'HubSpot', 'AWS', 'Shopify', 'Slack', 'Zoom', 'Microsoft 365', 'Google Workspace'].map((tech) => (
+                    <div key={tech} className="flex items-center">
+                      <input type="checkbox" id={`tech-${tech}`} className="mr-2" />
+                      <label htmlFor={`tech-${tech}`} className="text-sm">{tech}</label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </div>
+    </div>
+  );
+}
